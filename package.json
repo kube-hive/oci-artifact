@@ -3,7 +3,16 @@
   "version": "0.0.0",
   "description": "Build valid OCI images from a directory — pure JS, zero runtime dependencies",
   "license": "Apache-2.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "type": "module",
+  "repository": "https://github.com/kube-hive/oci-artifact",
+  "author": "axel7083",
+  "homepage": "https://github.com/kube-hive/oci-artifact",
+  "bugs": {
+    "url": "https://github.com/kube-hive/oci-artifact/issues"
+  },
   "exports": {
     ".": {
       "import": "./dist/index.js",
