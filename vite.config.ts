@@ -5,7 +5,10 @@ import { builtinModules } from 'node:module';
 export default defineConfig({
   build: {
     lib: {
-      entry: resolve(__dirname, 'src/index.ts'),
+      entry: {
+        index: resolve(__dirname, 'src/index.ts'),
+        cli: resolve(__dirname, 'src/cli.ts'),
+      },
       formats: ['es'],
     },
     target: 'node24',
@@ -17,6 +20,7 @@ export default defineConfig({
       ],
       output: {
         entryFileNames: '[name].js',
+        banner: (chunk) => chunk.name === 'cli' ? '#!/usr/bin/env node' : '',
       },
     },
     minify: false,
